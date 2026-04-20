@@ -1,11 +1,14 @@
 package edu.classproject.support;
 
-import java.util.List;
-
 public interface SupportService {
-    SupportTicket createTicket(String orderId, String customerId, String issueType);
 
-    SupportTicket updateStatus(String ticketId, String status);
+    void raiseComplaint(int id, String description);
 
-    List<SupportTicket> listByCustomer(String customerId);
+    void requestRefund(int id, String reason, double amount);
+
+    void approveRefund(int refundId);
+
+    void rejectRefund(int refundId);
+
+    void viewAllComplaints();
 }
